@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let newArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 22, 32];
+    linearSearch(newArray, 32);
+
+    binarySearch(newArray, 6);
+
+    function linearSearch(arr, value) {
+        let chiso = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (value === arr[i]) {
+                chiso = i;
+            }
+        }
+        alert('chi so cua ' + value + ' la ' + chiso);
+    }
+
+
+    function binarySearch(arr, value) {
+        let high = arr.length - 1;
+        let low = 0;
+        let mid;
+
+        while (low <= high) {
+            mid = Math.floor((high + low) / 2);
+            if (arr[mid] === value) {
+                alert("chi so cua " + value + " la " + mid);
+                break;
+            } else if (value > arr[mid]) {
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+        }
+    }
+
+</script>
+</body>
+</html>
